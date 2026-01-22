@@ -7,9 +7,11 @@ site_description: Documentation sur la programmation
 nav:
   - Home: index.md
   - Javascript:
-      - Base: javascript/base.md
+      - Bases: javascript/base.md
   - Mkdocs:
       - Bases: mkdocs/bases.md
+  - So_Long:
+      - Jeux: so_long/jeux.md
   - About: about.md
 
 # Thème du site :
@@ -52,6 +54,7 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.tabbed:
       alternate_style: true
+  - attr_list
 
 # Configuration des versions :
 extra:
