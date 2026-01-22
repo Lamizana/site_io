@@ -1,6 +1,6 @@
-# Welcome to MkDocs
+# Bienvenue sur MyDocs
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Ce site contient différents cours et approche sur la programmation
 
 ## Commands
 

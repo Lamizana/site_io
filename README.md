@@ -44,6 +44,11 @@ python -m pip install mkdocs        # installe la commande
 python -m mkdocs                    # préface de chaque commande mkdocs
 ```
 
+Pour faire en sorte que le serveur se mette automatiquement à jour lors d'un changement, lancer le serveur avec la commande :
+
+```bash
+python -m mkdocs serve --livereload
+```
 
 ---
 
