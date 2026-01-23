@@ -7,7 +7,7 @@ site_description: Documentation sur la programmation
 nav:
   - Home: index.md
   - Javascript:
-      - Bases: javascript/base.md
+      - Bases: javascript/bases.md
   - Mkdocs:
       - Bases: mkdocs/bases.md
   - So_Long:
@@ -41,7 +41,7 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  favicon: images/favicon.ico
+  favicon: favicon.png
   custom_dir: overrides # Dossier pour les fichiers personnalisés
 
 markdown_extensions:

@@ -1,12 +1,12 @@
-# Programmation en javascript
+# <span class="h1">Programmation en javascript</span>
 
-> Découverte de javascript et réalisation d'un site  fonctionnel et dynamique avec openclassroom
-
-[Cour OpenClassroom](https://openclassrooms.com/fr/courses/7696886-apprenez-a-programmer-avec-javascript)
+<p align="center"><em>Découverte de <strong>javascript</strong> et réalisation d'un site fonctionnel et dynamique avec openclassroom</em></p>
 
 ---
 
 ## Objectifs pédagogique
+
+[Cour OpenClassroom](https://openclassrooms.com/fr/courses/7696886-apprenez-a-programmer-avec-javascript)
 
 - Manipuler des données avec javascript
 - Ecrire un fichier javascript
@@ -33,7 +33,7 @@ Lancer le projet :
 npm run **dev**
 ```
 
-## Partie [1]. Manipuler des donnés avec javascript
+## **Partie [1].** Manipuler des donnés avec javascript
 
 ---
 
@@ -43,34 +43,33 @@ En informatique, une variable est un conteneur qui stocke la données temporaire
 
 Diférent types de variables :
 
-- `number`: la donne est un chiffre
-- `string`: la donné est un chaine de caractère
-- `boolean`: la donnée est vrai ou fausse
+- **`number`**: la donne est un chiffre
+- **`string`**: la donné est un chaine de caractère
+- **`boolean`**: la donnée est vrai ou fausse
 
 Pour déclarer un variable nous utilison une ***instruction***.
 
-> [!NOTE]
-> Les instructions sont des mots clefs unique qui permettent au code d'etre executé.
-> Pour déclarer des variables, nous utiilisons les instructions `let` et `const`.
+!!! note "Note"
+    Les instructions sont des mots clefs unique qui permettent au code d'etre executé.
+    Pour déclarer des variables, nous utiilisons les instructions ***`let`*** et ***`const`***.
 
-***Instruction `let`***
+***Instruction `let`*** :
 
-Permet de déclarer une variable. Elle permet aussi de la redéfinir sans reecrire l'instruction `let`.
+Permet de déclarer une variable. Elle permet aussi de la redéfinir sans reecrire l'instruction ***`let`.***
 
-***Instruction `const`***
+***Instruction `const`*** :
 
-Permet ausside declarer une variable>
+Permet aussi de déclarer une variable.
 Cependant const est une constante, c'est à dire qu'une fois déclarer elle ne peux/doit plus etre changer. Si l'on essaie, Javascript refusera d'exécuter l'instruction et affichera une erreur.
 
-> [!NOTE]
-> L'instruction `var` peut aussi etre utiliser pour déclarer une variable. Cependant elle est devenue obsolète.
+!!! note "Note"
+    L'instruction ***`var`*** peut aussi etre utiliser pour déclarer une variable. Cependant elle est devenue obsolète.
 
 ***Instruction `console.log`***
 
 Permet de vérifier le contenue d une variable en l'affichant dans le terminal
 
 ### 2. Modifier une variable
-
 
 ### 3. Structurer des donnés grace aux objets
 

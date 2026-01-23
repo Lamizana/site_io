@@ -1,5 +1,7 @@
 # <span class="h1">So Long</span>
 
+![player](../images/player-solong.png){.player-solong}
+
 <p align="center"><em>Petit jeux 2D avec la minilibx 42</em></p>
 
 ---
@@ -7,6 +9,8 @@
 ## <span class="h2">Presentation</span>
 
 L'objectif est de créer un jeux 2D en ***C*** avec la minilibx.
+
+---
 
 ## <span class="h2">Installation</span>
 
@@ -49,4 +53,10 @@ Pour lancer le `solong`:
 
 Le jeux se lance alors dans une fenétre indépendante :
 
-![Image](../images/so_long.png){.shadowed-image}
+<!-- ![./so_long carte_03.ber](../images/so_long.png){.shadowed-image} -->
+
+
+<video width="100%" controls>
+  <source src="../videos/solLong.mp4" type="video/mp4">
+  Votre navigateur ne supporte pas la vidéo.
+</video>
