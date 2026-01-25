@@ -25,7 +25,7 @@
 
 Pour installer et exécuter le projet, suivez ces étapes :
 
-```bash
+``` sh
 # Cloner le dépôt
 git clone https://github.com/Lamizana/So-long.git
 
@@ -35,7 +35,7 @@ cd So-long
 
 Accéder ensuite aux exécutables :
 
-```bash
+``` sh
 > ls
 > so_long git:(main) ✗ ls
 carte_01.ber  carte_03.ber        carte_04_bonus.ber  ft_errors.c      ft_inits.c  ft_parse_road.c  gnl     main.c    mlx_linux  so_long_bonus  so_long.h

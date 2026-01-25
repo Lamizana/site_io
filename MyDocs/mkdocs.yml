@@ -10,6 +10,7 @@ nav:
   - Javascript:
       - Bases: javascript/bases.md
   - Mkdocs:
+      - mkdocs/index.md
       - Bases: mkdocs/bases.md
       - Material: mkdocs/material.md
   - So_Long:
@@ -21,12 +22,6 @@ theme:
   name: material # mkdocs,readthedocs, material
   language: fr
   palette:
-    # Toogle automatique de la palette :
-    - media: "(prefers-color-scheme)"
-      toggle:
-        icon: material/brightness-auto
-        name: Switch to light mode
-
     # Toogle Mode clair :
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -46,21 +41,25 @@ theme:
         name: Passer en mode clair
 
   features:
+    - navigation.instant
+    - navigation.instant.progress
     - navigation.tabs
-    - navigation.sections
-    - toc.integrate
+    - navigation.path
     - navigation.top
+    - navigation.sections
+    - navigation.prune
+    - navigation.indexes
+    - toc.integrate
     - search.suggest
     - search.highlight
     - content.code.copy
+    - header.autohide
 
   font:
     text: Roboto
     code: Roboto Mono
-
   icon:
     logo: material/bat
-
   favicon: favicon.png
 
   # Dossier pour les fichiers personnalisés
@@ -68,6 +67,11 @@ theme:
 
 # ============================ Extensions Markdown ============================
 markdown_extensions:
+  # Python Markdown
+  - toc:
+      permalink: true
+
+  # Python Markdown Extensions
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
@@ -97,4 +101,6 @@ extra:
     cookies:
       analytics:
         name: Google Analytics
+        provider: google
         checked: false
+        property: G-74MZWWS1RR
