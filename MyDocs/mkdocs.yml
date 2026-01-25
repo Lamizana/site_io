@@ -7,15 +7,24 @@ site_description: Documentation sur la programmation
 # ===================== Configuration de la navigation ========================
 nav:
   - Home: index.md
+
+  - Projets:
+    - projets/index.md
+    - So_Long: projets/so_long.md
+
   - Javascript:
       - Bases: javascript/bases.md
+
+  - GitHub:
+      - github/github.md
+
   - Mkdocs:
       - mkdocs/index.md
       - Bases: mkdocs/bases.md
       - Material: mkdocs/material.md
-  - So_Long:
-      - Jeux: so_long/jeux.md
+
   - About: about.md
+
 
 # ============================== Thème du site ================================
 theme:
@@ -68,8 +77,6 @@ theme:
 # ============================ Extensions Markdown ============================
 markdown_extensions:
   # Python Markdown
-  - toc:
-      permalink: true
 
   # Python Markdown Extensions
   - pymdownx.highlight:
@@ -83,7 +90,11 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - attr_list
+  - md_in_html
 
 extra_css:
   - css/custom.css

@@ -1,3 +1,7 @@
+---
+icon: material/gamepad-square
+---
+
 # <span class="h1">So Long</span>
 
 ![player](../images/player-solong.png){.player-solong}
@@ -25,7 +29,7 @@
 
 Pour installer et exécuter le projet, suivez ces étapes :
 
-``` sh
+```bash
 # Cloner le dépôt
 git clone https://github.com/Lamizana/So-long.git
 
@@ -35,7 +39,7 @@ cd So-long
 
 Accéder ensuite aux exécutables :
 
-``` sh
+```bash
 > ls
 > so_long git:(main) ✗ ls
 carte_01.ber  carte_03.ber        carte_04_bonus.ber  ft_errors.c      ft_inits.c  ft_parse_road.c  gnl     main.c    mlx_linux  so_long_bonus  so_long.h
@@ -53,7 +57,7 @@ Le projet contient deux versions du jeu :
 
 Pour lancer le jeu, utilisez les commandes suivantes :
 
-```bash
+``` c
 # Lancer la version de base
 ./so_long carte_03.ber
 

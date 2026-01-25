@@ -49,3 +49,7 @@ Pour faire en sorte que le serveur se mette automatiquement à jour lors d'un ch
 ```bash
 python -m mkdocs serve --livereload
 ```
+
+```bash
+python -m mkdocs gh-deploy
+```
