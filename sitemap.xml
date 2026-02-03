@@ -2,42 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://lamizana.github.io/MyDocs/</loc>
-         <lastmod>2026-01-25</lastmod>
+         <lastmod>2026-02-03</lastmod>
     </url>
     <url>
          <loc>https://lamizana.github.io/MyDocs/about/</loc>
-         <lastmod>2026-01-25</lastmod>
+         <lastmod>2026-02-03</lastmod>
     </url>
     <url>
          <loc>https://lamizana.github.io/MyDocs/github/github/</loc>
-         <lastmod>2026-01-25</lastmod>
+         <lastmod>2026-02-03</lastmod>
     </url>
     <url>
          <loc>https://lamizana.github.io/MyDocs/javascript/bases/</loc>
-         <lastmod>2026-01-25</lastmod>
+         <lastmod>2026-02-03</lastmod>
+    </url>
+    <url>
+         <loc>https://lamizana.github.io/MyDocs/javascript/react/</loc>
+         <lastmod>2026-02-03</lastmod>
+    </url>
+    <url>
+         <loc>https://lamizana.github.io/MyDocs/javascript/redux/</loc>
+         <lastmod>2026-02-03</lastmod>
     </url>
     <url>
          <loc>https://lamizana.github.io/MyDocs/mkdocs/</loc>
-         <lastmod>2026-01-25</lastmod>
+         <lastmod>2026-02-03</lastmod>
     </url>
     <url>
          <loc>https://lamizana.github.io/MyDocs/mkdocs/bases/</loc>
-         <lastmod>2026-01-25</lastmod>
+         <lastmod>2026-02-03</lastmod>
     </url>
     <url>
          <loc>https://lamizana.github.io/MyDocs/mkdocs/material/</loc>
-         <lastmod>2026-01-25</lastmod>
+         <lastmod>2026-02-03</lastmod>
     </url>
     <url>
          <loc>https://lamizana.github.io/MyDocs/projets/</loc>
-         <lastmod>2026-01-25</lastmod>
+         <lastmod>2026-02-03</lastmod>
     </url>
     <url>
          <loc>https://lamizana.github.io/MyDocs/projets/push_swap/</loc>
-         <lastmod>2026-01-25</lastmod>
+         <lastmod>2026-02-03</lastmod>
     </url>
     <url>
          <loc>https://lamizana.github.io/MyDocs/projets/so_long/</loc>
-         <lastmod>2026-01-25</lastmod>
+         <lastmod>2026-02-03</lastmod>
     </url>
 </urlset>
