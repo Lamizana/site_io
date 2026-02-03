@@ -901,6 +901,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#affichez-du-contenu-de-maniere-conditionnelle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Affichez du contenu de manière conditionnelle
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1323,6 +1334,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#affichez-du-contenu-de-maniere-conditionnelle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Affichez du contenu de manière conditionnelle
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1548,17 +1570,128 @@ L’application est alors prête à être déployée.</p>
 </span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>└── vite.config.js          # Configuration Vite
 </span></code></pre></div>
 <hr />
-<h2 id="affichez-du-contenu-dynamique-grace-aux-listes-et-aux-conditions">Affichez du contenu dynamique grâce aux listes et aux conditions</h2>
+<h2 id="affichez-du-contenu-dynamique-grace-aux-listes-et-aux-conditions"><span class="h2">Affichez du contenu dynamique grâce aux listes et aux conditions</span></h2>
 <h3 id="creez-des-listes-dynamiques-avec-vos-donnees">Créez des listes dynamiques avec vos données</h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<details class="note" open="open">
+<summary>Note</summary>
 <p>En développement, vous travaillerez constamment avec des listes de données : produits, utilisateurs, articles... Plutôt que de copier-coller du code, vous pouvez <strong><em>directement itérer sur vos données et générer des composants React automatiquement</em></strong>.</p>
-</div>
+</details>
 <p>La méthode JavaScript  <strong><code>map()</code></strong>  transforme chaque élément d'un tableau en appliquant une fonction, puis renvoie un nouveau tableau avec les résultats.</p>
 <div class="language-jsx highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">]</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">doubles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">numbers</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="c1">// [2, 4, 6, 8]</span>
 </span></code></pre></div>
 <p>En React, <strong><code>map()</code></strong> va nous permettre de <strong>transformer une liste de données en liste de composants JSX</strong>. Voyons ça en pratique.</p>
+<ul>
+<li>Pour parcourir une <code>map</code> et l'afficher :</li>
+</ul>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">plantList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="s1">&#39;monstera&#39;</span><span class="p">,</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="s1">&#39;ficus lyrata&#39;</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">  </span><span class="s1">&#39;pothos argenté&#39;</span><span class="p">,</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">  </span><span class="s1">&#39;yucca&#39;</span><span class="p">,</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">  </span><span class="s1">&#39;palmier&#39;</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="p">]</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="kd">const</span><span class="w"> </span><span class="nx">ShoppingList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">    </span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">      </span><span class="p">{</span><span class="nx">plantList</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">plant</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">        </span><span class="p">&lt;</span><span class="nt">li</span><span class="w"> </span><span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="sb">`</span><span class="si">${</span><span class="nx">plant</span><span class="si">}</span><span class="sb">-</span><span class="si">${</span><span class="nx">index</span><span class="si">}</span><span class="sb">`</span><span class="p">}&gt;{</span><span class="nx">plant</span><span class="p">}&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">      </span><span class="p">))}</span>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">    </span><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">  </span><span class="p">)</span>
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="p">}</span>
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>
+</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">ShoppingList</span>
+</span></code></pre></div>
+<p>Pour chaque plante, React crée :</p>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="nx">Nom</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="nx">la</span><span class="w"> </span><span class="nx">plante</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<ul>
+<li>La key sert à <strong>identifier chaque élément de la liste</strong> pour React.</li>
+</ul>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="sb">`</span><span class="si">${</span><span class="nx">plant</span><span class="si">}</span><span class="sb">-</span><span class="si">${</span><span class="nx">index</span><span class="si">}</span><span class="sb">`</span><span class="p">}</span>
+</span></code></pre></div>
+<details class="infos" open="open">
+<summary>Information</summary>
+<p>La méthode <strong><code>map()</code></strong> permet d'itérer sur des données et de retourner un tableau d'éléments. Par ailleurs, les méthodes <strong><code>forEach()</code></strong>, <strong><code>filter()</code></strong>, <strong><code>reduce()</code></strong>, etc., qui permettent de manipuler des tableaux, seront également vos alliés en React.</p>
+</details>
+<ul>
+<li>Pour recuperer une categories de plantes :</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1">// Fichier data.js</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">plantList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">  </span><span class="p">{</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;monstera&quot;</span><span class="p">,</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="nx">category</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;classique&quot;</span><span class="p">,</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1ed&quot;</span><span class="p">,</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">  </span><span class="p">{</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ficus lyrata&quot;</span><span class="p">,</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">    </span><span class="nx">category</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;classique&quot;</span><span class="p">,</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2ab&quot;</span><span class="p">,</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="p">]</span>
+</span></code></pre></div>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1">// Fichier composant jsx :</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">plantList</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../data/list_plant&#39;</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">ShoppingList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="c1">// Récupérer les catégories (sans doublons) :</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">categories</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="ow">new</span><span class="w"> </span><span class="nb">Set</span><span class="p">(</span><span class="nx">plantList</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">plant</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">plant</span><span class="p">.</span><span class="nx">category</span><span class="p">))]</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">        </span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">            </span><span class="p">{</span><span class="nx">categories</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">category</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">                </span><span class="p">&lt;</span><span class="nt">li</span><span class="w"> </span><span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">category</span><span class="p">}&gt;{</span><span class="nx">category</span><span class="p">}&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">            </span><span class="p">))}</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">        </span><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">    </span><span class="p">)</span>
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="p">}</span>
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>
+</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">ShoppingList</span>
+</span></code></pre></div>
+<details class="note" open="open">
+<summary>Explication rapide</summary>
+<ul>
+<li><strong><code>map</code></strong> → extrait une propriété (category)</li>
+<li><strong><code>Set</code></strong> → supprime les doublons</li>
+<li><strong><code>[...]</code></strong> → retransforme en tableau</li>
+<li><strong><code>key={category}</code></strong> → clé unique</li>
+</ul>
+</details>
+<h3 id="affichez-du-contenu-de-maniere-conditionnelle">Affichez du contenu de manière conditionnelle</h3>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">plantList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="p">{</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;monstera&#39;</span><span class="p">,</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="nx">category</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;classique&#39;</span><span class="p">,</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1ed&#39;</span><span class="p">,</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">    </span><span class="nx">isBestSale</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">  </span><span class="p">{</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ficus lyrata&#39;</span><span class="p">,</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">    </span><span class="nx">category</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;classique&#39;</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;2ab&#39;</span><span class="p">,</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="w">    </span><span class="nx">isBestSale</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="p">]</span>
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>
+</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="kd">const</span><span class="w"> </span><span class="nx">ShoppingList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-16-18"><a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="w">    </span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="w">      </span><span class="p">{</span><span class="nx">plantList</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">plant</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-16-20"><a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="w">        </span><span class="p">&lt;</span><span class="nt">li</span><span class="w"> </span><span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">plant</span><span class="p">.</span><span class="nx">id</span><span class="p">}&gt;</span>
+</span><span id="__span-16-21"><a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a><span class="w">          </span><span class="p">{</span><span class="nx">plant</span><span class="p">.</span><span class="nx">isBestSale</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span><span class="err">🔥</span><span class="w"> </span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span><span class="err">👎</span><span class="w"> </span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;}</span>
+</span><span id="__span-16-22"><a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a><span class="w">          </span><span class="p">{</span><span class="nx">plant</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span>
+</span><span id="__span-16-23"><a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a><span class="w">        </span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-16-24"><a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a><span class="w">      </span><span class="p">))}</span>
+</span><span id="__span-16-25"><a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a><span class="w">    </span><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span><span id="__span-16-26"><a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a><span class="w">  </span><span class="p">)</span>
+</span><span id="__span-16-27"><a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Il existe une syntaxe encore plus élégante pour afficher quelque chose <strong><em>seulement si une condition est vraie</em></strong> grace a l'operateur <strong><code>&amp;&amp;</code></strong>:</p>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">{</span><span class="nx">plant</span><span class="p">.</span><span class="nx">isBestSale</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span><span class="err">🔥</span><span class="w"> </span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;}</span>
+</span></code></pre></div>
 
 
 
