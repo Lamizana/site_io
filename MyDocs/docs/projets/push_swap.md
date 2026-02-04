@@ -37,3 +37,5 @@ pour trier une grande quantité de nombres.
 
 Les performances sont évaluées selon le nombre de coups générés
 en fonction de la taille de la liste.
+
+:material-sort:

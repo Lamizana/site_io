@@ -1,5 +1,5 @@
 ---
-icon: material/emoticon-happy 
+icon: material/language-javascript 
 ---
 
 # <span class="h1">Programmation en javascript</span>

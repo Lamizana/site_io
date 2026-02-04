@@ -202,12 +202,11 @@ la-maison-jungle/
 
 ---
 
-## Affichez du contenu dynamique grâce aux listes et aux conditions
-
+## <span class="h2">Affichez du contenu dynamique grâce aux listes et aux conditions</span>
 
 ### Créez des listes dynamiques avec vos données
 
-!!! note "Note"
+???+ note "Note"
     En développement, vous travaillerez constamment avec des listes de données : produits, utilisateurs, articles... Plutôt que de copier-coller du code, vous pouvez ***directement itérer sur vos données et générer des composants React automatiquement***.
 
 La méthode JavaScript  **`map()`**  transforme chaque élément d'un tableau en appliquant une fonction, puis renvoie un nouveau tableau avec les résultats.
@@ -218,3 +217,124 @@ const doubles = numbers.map(x => x * 2) // [2, 4, 6, 8]
 ```
 
 En React, **`map()`** va nous permettre de **transformer une liste de données en liste de composants JSX**. Voyons ça en pratique.
+
+- Pour parcourir une `map` et l'afficher :
+
+```jsx
+const plantList = [
+  'monstera',
+  'ficus lyrata', 
+  'pothos argenté',
+  'yucca',
+  'palmier'
+]
+
+const ShoppingList = () => {
+  return (
+    <ul>
+      {plantList.map((plant, index) => (
+        <li key={`${plant}-${index}`}>{plant}</li>
+      ))}
+    </ul>
+  )
+}
+
+export default ShoppingList
+```
+
+Pour chaque plante, React crée :
+
+```jsx
+<li>Nom de la plante</li>
+```
+
+- La key sert à **identifier chaque élément de la liste** pour React.
+
+```jsx
+key={`${plant}-${index}`}
+```
+
+???+ infos "Information"
+    La méthode **`map()`** permet d'itérer sur des données et de retourner un tableau d'éléments. Par ailleurs, les méthodes **`forEach()`**, **`filter()`**, **`reduce()`**, etc., qui permettent de manipuler des tableaux, seront également vos alliés en React.
+
+- Pour recuperer une categories de plantes :
+
+```js
+// Fichier data.js
+export const plantList = [
+  {
+    name: "monstera",
+    category: "classique",
+    id: "1ed",
+  },
+  {
+    name: "ficus lyrata",
+    category: "classique",
+    id: "2ab",
+  }
+]
+```
+
+```jsx
+// Fichier composant jsx :
+import { plantList } from '../data/list_plant'
+
+const ShoppingList = () => {
+    // Récupérer les catégories (sans doublons) :
+    const categories = [...new Set(plantList.map(plant => plant.category))]
+
+    return (
+        <ul>
+            {categories.map(category => (
+                <li key={category}>{category}</li>
+            ))}
+        </ul>
+    )
+}
+
+export default ShoppingList
+```
+
+???+ note "Explication rapide"
+    - **`map`** → extrait une propriété (category)
+    - **`Set`** → supprime les doublons
+    - **`[...]`** → retransforme en tableau
+    - **`key={category}`** → clé unique
+
+### Affichez du contenu de manière conditionnelle
+
+```jsx
+const plantList = [
+  {
+    name: 'monstera',
+    category: 'classique',
+    id: '1ed',
+    isBestSale: true
+  },
+  {
+    name: 'ficus lyrata',
+    category: 'classique', 
+    id: '2ab',
+    isBestSale: false
+  }
+]
+
+const ShoppingList = () => {
+  return (
+    <ul>
+      {plantList.map((plant) => (
+        <li key={plant.id}>
+          {plant.isBestSale ? <span>🔥 </span> : <span>👎 </span>}
+          {plant.name}
+        </li>
+      ))}
+    </ul>
+  )
+}
+```
+
+Il existe une syntaxe encore plus élégante pour afficher quelque chose ***seulement si une condition est vraie*** grace a l'operateur **`&&`**:
+
+```jsx
+{plant.isBestSale && <span>🔥 </span>}
+```

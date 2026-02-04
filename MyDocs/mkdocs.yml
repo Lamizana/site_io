@@ -13,10 +13,11 @@ nav:
       - So Long: projets/so_long.md
       - Push Swap: projets/push_swap.md
 
-  - Javascript:
-      - Bases: javascript/bases.md
-      - Redux: javascript/redux.md
-      - React: javascript/react.md
+  - Cours:
+      - cours/index.md
+      - Javascript: cours/javascript.md
+      - Redux: cours/redux.md
+      - React: cours/react.md
 
   - GitHub:
       - github/github.md
